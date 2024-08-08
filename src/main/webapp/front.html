@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Employee Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container form .fields {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .input-field {
+            width: calc(50% - 15px);
+            margin-bottom: 20px;
+        }
+
+        .input-field label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #2e2e2e;
+            margin-bottom: 8px;
+        }
+
+        .input-field input,
+        .input-field select {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field input:focus,
+        .input-field select:focus {
+            border-color: #4070f4;
+            outline: none;
+        }
+
+        button {
+            background-color: #4070f4;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #265df2;
+        }
+
+        .view-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .input-field {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Registration</h1>
+        <form method="POST" action="save" enctype="multipart/form-data">
+            <div class="fields">
+                <div class="input-field">
+                    <label for="name">Candidate Name</label>
+                    <input type="text" placeholder="Enter your name" name="name" id="name" required>
+                </div>
+                <div class="input-field">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="number" placeholder="Enter Mobile Number" name="mobile" id="mobile" required>
+                </div>
+                <div class="input-field">
+                    <label for="email">Email Id</label>
+                    <input type="email" placeholder="Enter your email" name="email" id="email" required>
+                </div>
+                <div class="input-field">
+                    <label for="resume">Upload The Resume</label>
+                    <input type="file" name="resume" id="resume" required>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="view-button">
+            <a href="fetchAll"><button>View Employees</button></a>
+        </div>
+    </div>
+</body>
+</html>
